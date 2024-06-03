@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>vehicle-aggregator-problem</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <groupId>com.linkevich</groupId>
+    <name>vehicle-aggregator-problem</name>
+
+    <modules>
+        <module>vehicle-aggregator-service-api</module>
+        <module>vehicle-aggregator-service</module>
+        <module>bus-metadata-service-api</module>
+        <module>bus-metadata-service</module>
+        <module>bus-fallback-fare-service-api</module>
+        <module>bus-fallback-fare-service</module>
+        <module>train-live-location-service-api</module>
+        <module>train-live-location-service</module>
+        <module>bus-live-fare-n-location-service-api</module>
+        <module>bus-live-fare-n-location-service</module>
+    </modules>
+
+</project>
