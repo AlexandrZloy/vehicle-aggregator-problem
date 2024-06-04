@@ -17,6 +17,10 @@
 		<java.version>21</java.version>
 		<vehicle-aggregator-service-api.version>0.0.1-SNAPSHOT</vehicle-aggregator-service-api.version>
 		<bus-metadata-service-api.version>0.0.1-SNAPSHOT</bus-metadata-service-api.version>
+		<bus-live-fare-n-location-service-api.version>0.0.1-SNAPSHOT</bus-live-fare-n-location-service-api.version>
+		<bus-fallback-fare-service-api.version>0.0.1-SNAPSHOT</bus-fallback-fare-service-api.version>
+		<train-live-location-service-api.version>0.0.1-SNAPSHOT</train-live-location-service-api.version>
+		<mapstruct.version>1.5.5.Final</mapstruct.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -32,6 +36,26 @@
 			<groupId>com.linkevich</groupId>
 			<artifactId>bus-metadata-service-api</artifactId>
 			<version>${bus-metadata-service-api.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.linkevich</groupId>
+			<artifactId>bus-live-fare-n-location-service-api</artifactId>
+			<version>${bus-live-fare-n-location-service-api.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.linkevich</groupId>
+			<artifactId>bus-fallback-fare-service-api</artifactId>
+			<version>${bus-fallback-fare-service-api.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.linkevich</groupId>
+			<artifactId>train-live-location-service-api</artifactId>
+			<version>${train-live-location-service-api.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct</artifactId>
+			<version>${mapstruct.version}</version>
 		</dependency>
 
 		<dependency>
@@ -51,6 +75,20 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>org.mapstruct</groupId>
+							<artifactId>mapstruct-processor</artifactId>
+							<version>${mapstruct.version}</version>
+						</path>
+					</annotationProcessorPaths>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

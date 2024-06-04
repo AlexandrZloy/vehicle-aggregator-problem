@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: 0
+      author: a.linkevich
+      changes:
+        - sqlFile:
+            path: "db/changesets/001_init/0_ddl.sql"
+      rollback:
+        - sqlFile:
+            path: "db/changesets/001_init/0_rollback.sql"
+  - changeSet:
+      id: 1
+      author: a.linkevich
+      changes:
+        - sqlFile:
+            path: "db/changesets/001_init/1_dml.sql"
+      rollback:
+        - sqlFile:
+            path: "db/changesets/001_init/1_rollback.sql"

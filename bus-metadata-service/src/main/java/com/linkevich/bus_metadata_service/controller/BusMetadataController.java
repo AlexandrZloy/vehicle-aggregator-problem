@@ -1,25 +1,34 @@
 package com.linkevich.bus_metadata_service.controller;
 
+import com.linkevich.bus_metadata_service.mapper.BusMetadataMapper;
 import com.linkevich.bus_metadata_service.openapi.api.MetadataApi;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.linkevich.bus_metadata_service.openapi.model.BusMetadata;
+import com.linkevich.bus_metadata_service.service.BusMetadataService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.context.request.NativeWebRequest;
-import org.springframework.web.context.request.ServletWebRequest;
 
-import java.util.Optional;
+import java.util.List;
 
 @RestController
 public class BusMetadataController implements MetadataApi {
 
-    @Autowired
-    private HttpServletRequest request;
-    @Autowired
-    private HttpServletResponse response;
+    private final BusMetadataService busMetadataService;
+    private final BusMetadataMapper busMetadataMapper;
+
+    public BusMetadataController(
+            BusMetadataService busMetadataService,
+            BusMetadataMapper busMetadataMapper
+    ) {
+        this.busMetadataService = busMetadataService;
+        this.busMetadataMapper = busMetadataMapper;
+    }
 
     @Override
-    public Optional<NativeWebRequest> getRequest() {
-        return  Optional.of(new ServletWebRequest(request, response));
+    public ResponseEntity<List<BusMetadata>> metadataGet() {
+        return ResponseEntity.ok(
+                busMetadataService.getAllBusesMetadata().stream()
+                .map(busMetadataMapper::toDto)
+                .toList()
+        );
     }
 }
