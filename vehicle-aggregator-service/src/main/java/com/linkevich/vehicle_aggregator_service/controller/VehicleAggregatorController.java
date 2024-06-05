@@ -9,14 +9,11 @@ import com.linkevich.vehicle_aggregator_service.openapi.model.VehicleLocation;
 import com.linkevich.vehicle_aggregator_service.service.AggregatedVehicleLocationService;
 import com.linkevich.vehicle_aggregator_service.service.BusFareService;
 import com.linkevich.vehicle_aggregator_service.service.BusMetadataService;
-import com.linkevich.vehicle_aggregator_service.service.VehicleLocationService;
 import com.linkevich.vehicle_aggregator_service.service.model.BusFare;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-
-import java.util.List;
 
 @RestController
 public class VehicleAggregatorController implements BusesApi, VehicleLocationStreamApi {
