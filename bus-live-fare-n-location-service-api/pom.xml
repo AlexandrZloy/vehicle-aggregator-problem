@@ -63,7 +63,7 @@
                                 <useResponseEntity>false</useResponseEntity>
                                 <useSpringBoot3>true</useSpringBoot3>
                                 <interfaceOnly>true</interfaceOnly>
-                                <!--skipDefaultInterface>true</skipDefaultInterface-->
+                                <skipDefaultInterface>true</skipDefaultInterface>
                             </configOptions>
                         </configuration>
                     </execution>
